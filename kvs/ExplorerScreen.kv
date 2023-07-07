@@ -1,0 +1,17 @@
+<ExplorerScreen>:
+	name:'explorersc'
+	MDBoxLayout:
+		orientation:'vertical'
+		MDTopAppBar:
+			id:appbar
+			title:'File Manager'
+			left_action_items:[['content-paste',lambda x:root.pasteContent()]]
+			right_action_items:[['folder-plus',lambda x:root.getNewFolderName()]]
+		OneLineIconListItem:
+			text:'...'
+			on_release:root.goUp()
+			IconLeftWidget:
+				icon:'arrow-up-bold-outline'
+		MDScrollView:
+			MDList:
+				id:explorer_list

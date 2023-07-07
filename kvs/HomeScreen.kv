@@ -1,0 +1,29 @@
+<HomeScreen>:
+	name:'homesc'
+	MDBoxLayout:
+		orientation:'vertical'
+		MDTopAppBar:
+			title:'File Manager'
+		MDScrollView:
+			MDList:
+				TwoLineIconListItem:
+					id:system_storage
+					text:'System Storage'
+					secondary_text:''
+					on_release:root.openSystemStorage()
+					IconLeftWidgetWithoutTouch:
+						icon:'android'
+				TwoLineIconListItem:
+					id:internal_storage
+					text:'Internal Storage'
+					secondary_text:''
+					on_release:root.manager.get_screen('explorersc').initExplorerList("/storage/emulated/0/")
+					IconLeftWidgetWithoutTouch:
+						icon:'cellphone'
+				TwoLineIconListItem:
+					id:external_storage
+					text:'External Storage'
+					secondary_text:''
+					on_release:root.openExternalStorage()
+					IconLeftWidgetWithoutTouch:
+						icon:'micro-sd'
